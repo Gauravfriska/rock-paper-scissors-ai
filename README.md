@@ -40,11 +40,10 @@ Reasoning Loop: The application injects the current Game State (scores, bomb usa
 
 3. Screenshots
 
-Replace the text below with your image links.
 
 3.1 Game Landing Page
 
-The initial view where the game session starts.
+![The initial view where the game session starts.](https://drive.google.com/file/d/1DX2KKTSYQ9d2_NP71K_J0aLgkga0ym47/view?usp=drive_link)
 
 3.2 The Gameplay Arena
 
@@ -138,5 +137,6 @@ You can ask things like:
 "How many rounds are left?"
 
 "Tell me a joke."
+
 
 The AI will respond instantly without interrupting the flow of your match.
