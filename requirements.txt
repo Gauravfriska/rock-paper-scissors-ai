@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+streamlit
+google-generativeai
+pydantic
+requests
+
+# AIzaSyDkA58wFwMO1TK4HmrjlAluZB7zSGFzk6s
