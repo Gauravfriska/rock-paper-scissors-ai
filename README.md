@@ -43,7 +43,7 @@ Reasoning Loop: The application injects the current Game State (scores, bomb usa
 
 3.1 Game Landing Page
 
-!(https://drive.google.com/file/d/1DX2KKTSYQ9d2_NP71K_J0aLgkga0ym47/view?usp=drive_link)
+![Game Landing Page](https://drive.google.com/uc?export=view&id=1DX2KKTSYQ9d2_NP71K_J0aLgkga0ym47)
 
 3.2 The Gameplay Arena
 
@@ -140,4 +140,5 @@ You can ask things like:
 
 
 The AI will respond instantly without interrupting the flow of your match.
+
 
