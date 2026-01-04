@@ -4,7 +4,7 @@ An intelligent, AI-powered twist on the classic game, featuring a witty referee,
 
 ## 1. Project Description
 
-This project is a modern reimagining of Rock-Paper-Scissors, built with a Streamlit frontend and powered by Google's Gemini 1.5 Flash model.
+This project is a modern reimagining of Rock-Paper-Scissors, built with a Streamlit frontend and powered by Agent Development Kit (Google ADK).
 
 Instead of simple if-else logic, an AI Referee agent analyzes every move. It validates rules, enforces the special "Bomb" mechanic (limited to one use per game), and provides dynamic, funny, and context-aware commentary for every round. The application also features a chat mode where users can ask the referee questions about strategy or rules in real-time.
 
@@ -12,31 +12,31 @@ Instead of simple if-else logic, an AI Referee agent analyzes every move. It val
 
 ### 2.1 Tech Stack
 
-Language: Python 3.x
+* Language: Python 3.x
 
-Frontend Framework: Streamlit (Interactive Web UI)
+* Frontend Framework: Streamlit (Interactive Web UI)
 
-API Integration: Google Generative AI SDK (google-generativeai)
+* API Integration: Google Generative AI SDK (google-generativeai)
 
-State Management: Python Class-based in-memory storage
+* State Management: Python Class-based in-memory storage
 
 ### 2.2 ADK Agents & Tools Used
 
 This project utilizes specific Agent Development Kit (ADK) patterns to create a reliable AI Referee:
 
-The Model: We use gemini-1.5-flash-002, optimized for high speed and low latency, which is essential for a real-time game loop.
+* The Model: We use gemini-1.5-flash-002, optimized for high speed and low latency, which is essential for a real-time game loop.
 
-System Instructions (Persona): The Agent is initialized with a strict system prompt that defines its role: "You are the AI Referee... Bomb beats everything... Invalid input wastes the round." This ensures the AI stays in character.
+* System Instructions (Persona): The Agent is initialized with a strict system prompt that defines its role: "You are the AI Referee... Bomb beats everything... Invalid input wastes the round." This ensures the AI stays in character.
 
-Tool Use (Function Calling):
+* Tool Use (Function Calling):
 
-Tool Name: resolve_round
+* Tool Name: resolve_round
 
-Purpose: Instead of letting the LLM generate free text (which might hallucinate the winner), we force it to call this tool.
+* Purpose: Instead of letting the LLM generate free text (which might hallucinate the winner), we force it to call this tool.
 
-Structure: The tool accepts specific parameters: round_winner (user/bot/draw), is_invalid (boolean), and reasoning (string). This guarantees that the game logic—such as the complex "Bomb" interaction—is handled structurally and reliably.
+* Structure: The tool accepts specific parameters: round_winner (user/bot/draw), is_invalid (boolean), and reasoning (string). This guarantees that the game logic—such as the complex "Bomb" interaction—is handled structurally and reliably.
 
-Reasoning Loop: The application injects the current Game State (scores, bomb usage history) into the prompt on every turn, allowing the Agent to make state-aware decisions (e.g., rejecting a second Bomb attempt).
+* Reasoning Loop: The application injects the current Game State (scores, bomb usage history) into the prompt on every turn, allowing the Agent to make state-aware decisions (e.g., rejecting a second Bomb attempt).
 
 ## 3. Screenshots
 
@@ -77,32 +77,31 @@ cd rock-paper-scissors-ai
 
 It is recommended to use a virtual environment to avoid conflicts.
 
-For Windows:
+**For Windows:**
 
+```bash
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
+```
 
+**For Mac/Linux:**
 
-For Mac/Linux:
-
+```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
-
-(Note: If you don't have a requirements.txt file yet, run pip install streamlit google-generativeai)
-
-
+> **Note:** If you don't have a `requirements.txt` file yet, run `pip install streamlit google-generativeai`
 
 ## 4.3 Run the Application
 
 Start the Streamlit server:
 
+```bash
 streamlit run app.py
-
-
-The game will open automatically in your browser (usually at http://localhost:8501).
+```
 
 ## 5. Gameplay Guide
 
@@ -152,3 +151,4 @@ You can ask things like:
 "Tell me a joke."
 
 The AI will respond instantly without interrupting the flow of your match.
+
