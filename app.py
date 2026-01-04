@@ -6,7 +6,7 @@ import uuid
 import warnings
 
 # --- HARDCODED API KEY ---
-API_KEY = "AIzaSyDkA58wFwMO1TK4HmrjlAluZB7zSGFzk6s"
+API_KEY = "AIzaSyA_jfc-i7eKMiIPeMW-3mV2OFQoWYG8Ugg"
 
 # --- CONFIGURATION & SETUP ---
 st.set_page_config(page_title="AI Referee: RPS+", layout="wide")
@@ -106,9 +106,8 @@ class RefereeAgent:
         4. Generate short, witty commentary in the `reasoning` field.
         """
 
-        # Using specific version 002 to avoid 404 errors with alias
         model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash-002", 
+            model_name="gemini-2.5-flash-preview-09-2025", 
             tools=[resolve_tool],
             system_instruction=system_instruction
         )
@@ -119,7 +118,7 @@ class RefereeAgent:
         return """
         **Hi! Welcome to the Arena!** 🏟️
         
-        I'm your AI Referee (v2). Here are the rules for our match:
+        I'm your AI Referee. Here are the rules for our match:
         
         1. **Rock beats Scissors** 🪨✂️
         2. **Scissors beats Paper** ✂️📄
@@ -133,8 +132,7 @@ class RefereeAgent:
         """Simple chat function for the user to ask questions about the game."""
         try:
             genai.configure(api_key=api_key)
-            # Using specific version 002
-            model = genai.GenerativeModel("gemini-1.5-flash-002")
+            model = genai.GenerativeModel("gemini-2.5-flash-preview-09-2025")
             prompt = f"""
             You are a helpful and witty AI Referee for a Rock-Paper-Scissors-Plus game.
             The user is asking: "{question}"
@@ -143,8 +141,8 @@ class RefereeAgent:
             """
             response = model.generate_content(prompt)
             return response.text
-        except Exception as e:
-            return f"Referee distracted (Chat Error): {str(e)}"
+        except Exception:
+            return "I'm focusing on the match! Ask me about the rules later."
 
     def resolve_turn(self, api_key: str, current_state: dict, user_move: str, bot_move: str):
         try:
@@ -185,7 +183,7 @@ class RefereeAgent:
         except Exception as e:
             return {
                 "round_winner": "draw", "is_invalid": True,
-                "commentary": f"Referee distracted (Model Error): {str(e)}"
+                "commentary": f"Referee distracted: {str(e)}"
             }
 
 # --- CLASS 2: GAME MANAGER ---
