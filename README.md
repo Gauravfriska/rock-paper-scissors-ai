@@ -43,23 +43,23 @@ Reasoning Loop: The application injects the current Game State (scores, bomb usa
 
 3.1 Game Landing Page
 
-![Game Landing Page](https://drive.google.com/uc?export=view&id=1DX2KKTSYQ9d2_NP71K_J0aLgkga0ym47)
+![Game Landing Page](https://github.com/Gauravfriska/rock-paper-scissors-ai/blob/main/image.png)  
 
 3.2 The Gameplay Arena
 
-The interactive board showing scorecards, move buttons, and the round counter.
+![The interactive board showing scorecards, move buttons, and the round counter](https://github.com/Gauravfriska/rock-paper-scissors-ai/blob/main/Battle.png)
 
 3.3 AI Referee Commentary
 
-The AI analyzing a move and declaring a winner with witty reasoning.
+![The AI analyzing a move and declaring a winner with witty reasoning](https://github.com/Gauravfriska/rock-paper-scissors-ai/blob/main/Ai%20Refree.png)
 
 3.4 Battle Log
 
-The history tracking previous rounds and results.
+![Battle Log](https://github.com/Gauravfriska/rock-paper-scissors-ai/blob/main/Battle%20logs.png)
 
 3.5 Chat with Referee
 
-The interactive chat feature where users can ask questions about the game.
+![The interactive chat feature where users can ask questions about the game](https://github.com/Gauravfriska/rock-paper-scissors-ai/blob/main/Ask%20Questions%20.png)
 
 4. How to Run This Project
 
@@ -140,5 +140,6 @@ You can ask things like:
 
 
 The AI will respond instantly without interrupting the flow of your match.
+
 
 
